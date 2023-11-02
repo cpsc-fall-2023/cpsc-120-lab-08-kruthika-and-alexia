@@ -3,6 +3,7 @@
 // @lexi-macias
 // Partners: @kruthika-gowda
 
+#include <iomanip>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -25,6 +26,7 @@ int main(int argc, char* argv[]) {
   }
 
   double average{sum / static_cast<double>(arguments.size() - 1)};
-  std::cout << "average = " << average << "\n";
+  std::cout << std::fixed << std::setprecision(6) << "average = " << average
+            << "\n";
   return 0;
 }
