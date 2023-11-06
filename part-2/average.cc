@@ -17,16 +17,17 @@ int main(int argc, char* argv[]) {
   }
 
   double sum{0.0};
+  bool first_argument = true;
   for (std::string& index : arguments) {
-    if (index == "./average") {
+    if (first_argument) {
+      first_argument = false;
       continue;
     } else {
       sum += std::stod(index);
     }
   }
 
-  double average{sum / static_cast<double>(arguments.size() - 1)};
-  std::cout << std::fixed << std::setprecision(6) << "average = " << average
-            << "\n";
+  double average = sum / (static_cast<int>(arguments.size()) - 1);
+  std::cout << "average = " << average << "\n";
   return 0;
 }
